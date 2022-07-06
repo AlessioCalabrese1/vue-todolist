@@ -16,10 +16,11 @@
 
     <div id="app">
         <ul class="list-group">
-            <li class="list-group-item" v-for="(listItem, index) in todos" :class="{'strikethrough-text': listItem.done}">
+            <li class="list-group-item" v-for="(listItem, index) in todos"
+                :class="{'strikethrough-text': listItem.done}" v-if="!todos[index].removed">
                 {{ listItem.text }}
 
-                <button class="btn btn-danger">X</button>
+                <button class="btn btn-danger" @click="removeListElement(index)">X</button>
             </li>
         </ul>
     </div>
