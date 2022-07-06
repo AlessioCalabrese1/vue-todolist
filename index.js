@@ -1,8 +1,8 @@
 const app = new Vue({
-    el : "#app",
+    el: "#app",
 
-    data : {
-        todos : [
+    data: {
+        todos: [
             {
                 text: 'Fare i compiti',
                 done: false,
@@ -23,27 +23,31 @@ const app = new Vue({
         textNewLiElement: ""
     },
 
-    methods : {
-        removeListElement(index){
+    methods: {
+        removeListElement(index) {
             this.todos[index].removed = true;
         },
 
-        addNewElement(){
-            const newLiElement = {
-                text: this.textNewLiElement,
-                done: false,
-                removed: false,
-            };
-            this.todos.push(newLiElement); 
-            this.textNewLiElement = "";
+        addNewElement() {
+            if (this.textNewLiElement != "") {
+                const newLiElement = {
+                    text: this.textNewLiElement,
+                    done: false,
+                    removed: false,
+                };
+                this.todos.push(newLiElement);
+                this.textNewLiElement = "";
+            } else {
+                alert("Inserisci un elemento valido!");
+            }
         },
 
-        invertDone(index){
+        invertDone(index) {
             if (this.todos[index].done === true) {
                 this.todos[index].done = false;
-            } else{
+            } else {
                 this.todos[index].done = true;
-            } 
+            }
         }
     }
 

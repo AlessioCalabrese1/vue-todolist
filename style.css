@@ -1,3 +1,9 @@
 .strikethrough-text{
     text-decoration: line-through;
 }
+
+.container-list-item{
+    width: 800px;
+    max-height: 300px;
+    overflow-y: auto;
+}

@@ -15,17 +15,22 @@
 <body>
 
     <div id="app">
-        <ul class="list-group">
-            <li class="list-group-item" v-for="(listItem, index) in todos"
-                :class="{'strikethrough-text': listItem.done}" v-if="!todos[index].removed"
-                @click="invertDone(index)">
-                {{ listItem.text }}
+        <div class="d-flex justify-content-center mt-3">
+            <ul class="list-group container-list-item text-center">
+                <li class="list-group-item" v-for="(listItem, index) in todos"
+                    :class="{'strikethrough-text': listItem.done}" v-if="!todos[index].removed"
+                    @click="invertDone(index)">
+                    {{ listItem.text }}
 
-                <button class="btn btn-danger" @click="removeListElement(index)">X</button>
-            </li>
-        </ul>
+                    <button class="btn btn-danger" @click="removeListElement(index)">X</button>
+                </li>
+            </ul>
+        </div>
 
-        <input type="text" v-model="textNewLiElement" @keyUp.enter="addNewElement">
+        <div class="text-center mt-3">
+            <input type="text" class="btn border" placeholder="Inserisci un elemento!" v-model="textNewLiElement" @keyUp.enter="addNewElement">
+        </div>
+       
     </div>
 
 
