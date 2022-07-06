@@ -19,16 +19,23 @@ const app = new Vue({
                 removed: false
             }
         ],
+
+        textNewLiElement: ""
     },
 
     methods : {
         removeListElement(index){
-            /* let liArr = document.querySelectorAll("ul li");
-            console.log(liArr);
-            console.log(index);
-            liArr[index].remove(); */
-
             this.todos[index].removed = true;
+        },
+
+        addNewElement(){
+            const newLiElement = {
+                text: this.textNewLiElement,
+                done: false,
+                removed: false,
+            };
+            this.todos.push(newLiElement); 
+            this.textNewLiElement = "";
         }
     }
 

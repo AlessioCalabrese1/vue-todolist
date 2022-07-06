@@ -23,6 +23,8 @@
                 <button class="btn btn-danger" @click="removeListElement(index)">X</button>
             </li>
         </ul>
+
+        <input type="text" v-model="textNewLiElement" @keyUp.enter="addNewElement">
     </div>
 
 
